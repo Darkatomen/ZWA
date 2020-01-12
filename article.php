@@ -38,7 +38,7 @@
     <meta charset="UTF-8">
     <!-- TITLE AND ICON -->
     <title><?php echo htmlspecialchars($selectedArticle["title"]); ?></title>
-    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
     <!-- CSS -->
     <link rel="stylesheet" href="CSS/head.css" media="all"/>
     <link rel="stylesheet" href="CSS/navigation_menu.css" media="all"/>
@@ -46,6 +46,8 @@
     <link rel="stylesheet" href="CSS/main_page.css" media="all"/>
     <link rel="stylesheet" href="CSS/article.css" media="all"/>
     <link rel="stylesheet" href="CSS/print.css" media="print"/>
+    <!-- JAVASCRIPT -->
+    <script src="JS/latest.js"></script>
 </head>
 <body>
     <!-- HEAD PANEL -->
@@ -73,24 +75,24 @@
     <!-- PANEL WITH LATEST NEWS-->
     <div id="side">
         <div id="latest" class="panel">
-        <h2>Latest</h2>
-        <?php
-            $author = getUserById($latestArticle["authorId"], $users);
-            echo "<h3><a href=\"".$latestArticle["url"]."\">".htmlspecialchars($latestArticle["title"])."</a></h3>";
-            echo "<p class=\"author\">".date("d.m.Y, H:i e", $latestArticle["timestamp_created"]);
-            echo " - ".$author["firstname"]." ".$author["lastname"]."</p>";
-            echo "<p>".replacePlaceholders(htmlspecialchars(getArticleSummary($latestArticle)))."</p>";
-        ?>
+            <h2>Latest</h2>
+            <?php
+                $author = getUserById($latestArticle["authorId"], $users);
+                echo "<h3><a href=\"".$latestArticle["url"]."\">".htmlspecialchars($latestArticle["title"])."</a></h3>";
+                echo "<p class=\"author\">".date("d.m.Y, H:i e", $latestArticle["timestamp_created"]);
+                echo " - ".htmlspecialchars($author["firstname"])." ".htmlspecialchars($author["lastname"])."</p>";
+                echo "<p>".replacePlaceholders(htmlspecialchars(getArticleSummary($latestArticle)))."</p>";
+            ?>
         </div>
     </div>
     <!-- ARTICLE -->
     <div class="mainPage">
         <!-- TITLE -->
-        <h1><?php echo htmlspecialchars($selectedArticle["title"]); ?></h1>
+        <h1><a href=""><?php echo htmlspecialchars($selectedArticle["title"]); ?></a></h1>
         <!-- TIME & AUTHOR -->
         <?php 
             echo "<p>".date("d.m.Y, H:i e", $selectedArticle["timestamp_created"]);
-            echo " - ".$author["firstname"]." ".$author["lastname"]."</p>";
+            echo " - ".htmlspecialchars($author["firstname"])." ".htmlspecialchars($author["lastname"])."</p>";
         ?>
         <!-- SUMMARY -->
         <?php 

@@ -19,3 +19,8 @@ body div.mainPage article {
     text-align: justify;
     margin-bottom: 50px;
 }
+
+body div.mainPage h1 a {
+    color: rgb(54, 88, 189);
+    text-decoration: none;
+}

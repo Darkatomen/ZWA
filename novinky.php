@@ -39,7 +39,7 @@
     <meta charset="UTF-8">
     <!-- TITLE AND ICON -->
     <title>ZWA News</title>
-    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
     <!-- CSS -->
     <link rel="stylesheet" href="CSS/head.css" media="all"/>
     <link rel="stylesheet" href="CSS/navigation_menu.css" media="all"/>
@@ -47,6 +47,8 @@
     <link rel="stylesheet" href="CSS/main_page.css" media="all"/>
     <link rel="stylesheet" href="CSS/novinky.css" media="all"/>
     <link rel="stylesheet" href="CSS/print.css" media="print"/>
+    <!-- JAVASCRIPT -->
+    <script src="JS/latest.js"></script>
 </head>
 <body>
     <!-- HEAD PANEL -->
@@ -79,7 +81,7 @@
                 $author = getUserById($latestArticle["authorId"], $users);
                 echo "<h3><a href=\"".$latestArticle["url"]."\">".htmlspecialchars($latestArticle["title"])."</a></h3>";
                 echo "<p class=\"author\">".date("d.m.Y, H:i e", $latestArticle["timestamp_created"]);
-                echo " - ".$author["firstname"]." ".$author["lastname"]."</p>";
+                echo " - ".htmlspecialchars($author["firstname"])." ".htmlspecialchars($author["lastname"])."</p>";
                 echo "<p>".replacePlaceholders(htmlspecialchars(getArticleSummary($latestArticle)))."</p>";
             ?>
         </div>
@@ -92,7 +94,7 @@
                 $author = getUserById($article["authorId"], $users);
                 echo "<div><h1><a href=\"".$article["url"]."\">".htmlspecialchars($article["title"])."</a></h1>";
                 echo "<p class=\"author\">".date("d.m.Y, H:i e", $article["timestamp_created"]);
-                echo " - ".$author["firstname"]." ".$author["lastname"]."</p>";
+                echo " - ".htmlspecialchars($author["firstname"])." ".htmlspecialchars($author["lastname"])."</p>";
                 echo "<p>".replacePlaceholders(htmlspecialchars(getArticleSummary($article)))."</p></div>";
             }
         ?>

@@ -91,7 +91,7 @@
     <meta charset="UTF-8">
     <!-- TITLE AND LOGO -->
     <title>ZWA News</title>
-    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
     <!-- CSS -->
     <link rel="stylesheet" href="CSS/head.css" media="all"/>
     <link rel="stylesheet" href="CSS/navigation_menu.css" media="all"/>
@@ -101,6 +101,7 @@
     <link rel="stylesheet" href="CSS/print.css" media="print"/>
     <!-- JAVASCRIPT -->
     <script src="JS/new_article.js"></script>
+    <script src="JS/latest.js"></script>
 </head>
 <body>
     <!-- HEAD PANEL -->
@@ -127,7 +128,7 @@
             $author = getUserById($latestArticle["authorId"], $users);
             echo "<h3><a href=\"".$latestArticle["url"]."\">".htmlspecialchars($latestArticle["title"])."</a></h3>";
             echo "<p class=\"author\">".date("d.m.Y, H:i e", $latestArticle["timestamp_created"]);
-            echo " - ".$author["firstname"]." ".$author["lastname"]."</p>";
+            echo " - ".htmlspecialchars($author["firstname"])." ".htmlspecialchars($author["lastname"])."</p>";
             echo "<p>".replacePlaceholders(htmlspecialchars(getArticleSummary($latestArticle)))."</p>";
         ?>
         </div>
@@ -139,7 +140,7 @@
             <!-- TITLE -->
             <label>
                 <h2 class="required">Title:</h2>
-                <input id="title" type="text" required name="title" placeholder="New title" <?php echo in_array("title", $error_publish) ? "class=\"error_publish\"" : ""; ?> <?php echo isset($_POST["title"]) ? "value=\"".$_POST["title"]."\"" : ""; ?>>
+                <input id="title" type="text" required name="title" placeholder="New title" <?php echo in_array("title", $error_publish) ? "class=\"error_publish\"" : ""; ?> <?php echo isset($_POST["title"]) ? "value=\"".htmlspecialchars($_POST["title"])."\"" : ""; ?>>
             </label>
             <!-- CATEGORY -->
             <label>
@@ -171,16 +172,15 @@
             <label>
                 <h2>Summary:</h2>
                 <p id="max_characters" class="paragraph<?php echo in_array("summary", $error_publish) ? " error_text" : ""; ?>">Maximum 1000 characters</p>
-                <textarea id="summary" name="summary" cols="30" rows="10" <?php echo in_array("summary", $error_publish) ? " class=\"error_publish\"" : ""; ?>><?php echo isset($_POST["summary"]) ? $_POST["summary"] : ""; ?></textarea>
+                <textarea id="summary" name="summary" cols="30" rows="10" <?php echo in_array("summary", $error_publish) ? " class=\"error_publish\"" : ""; ?>><?php echo isset($_POST["summary"]) ? htmlspecialchars($_POST["summary"]) : ""; ?></textarea>
             </label>
             <!-- ARTICLE -->
             <label>
                 <h2 class="required">Article:</h2>
-                <textarea id="article" name="article" required cols="30" rows="10" <?php echo in_array("article", $error_publish) ? "class=\"error_publish\"" : ""; ?>><?php echo isset($_POST["article"]) ? $_POST["article"] : ""; ?></textarea>
+                <textarea id="article" name="article" required cols="30" rows="10" <?php echo in_array("article", $error_publish) ? "class=\"error_publish\"" : ""; ?>><?php echo isset($_POST["article"]) ? htmlspecialchars($_POST["article"]) : ""; ?></textarea>
             </label>
             <input id="publish" type="submit" value="Publish" name="publish">
         </form>
     </div>
-    <script>init();</script>
 </body>
 </html>

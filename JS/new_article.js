@@ -1,3 +1,5 @@
+window.addEventListener("load", init);
+
 // Initializes JS - adds event listeners
 function init()
 {

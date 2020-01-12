@@ -87,7 +87,8 @@ function replacePlaceholders(string $text)
         $text = str_replace(htmlspecialchars("<bt>"), "<br>&emsp;", $text);
         $text = str_replace(htmlspecialchars("<brt>"), "<br><br>&emsp;", $text);
         $text = str_replace(htmlspecialchars("<url>"), "<a href=\"", $text);
-        $text = str_replace(htmlspecialchars("</url>"), "\">here</a>", $text);
+        $text = str_replace(htmlspecialchars("</url-here>"), "\">here</a>", $text);
+        $text = str_replace(htmlspecialchars("</url-this>"), "\">this</a>", $text);
         return $text;
     }
 

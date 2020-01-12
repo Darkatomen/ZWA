@@ -50,7 +50,7 @@
     <meta charset="UTF-8">
     <!-- TITLE AND ICON -->
     <title>Login</title>
-    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
     <!-- CSS -->
     <link rel="stylesheet" href="CSS/head.css" media="all"/>
     <link rel="stylesheet" href="CSS/navigation_menu.css" media="all"/>
@@ -60,6 +60,7 @@
     <link rel="stylesheet" href="CSS/print.css" media="print"/>
     <!-- JAVASCRIPT -->
     <script src="JS/login.js"></script>
+    <script src="JS/latest.js"></script>
 </head>
 <body>
     <!-- HEAD PANEL -->
@@ -85,7 +86,7 @@
             $author = getUserById($latestArticle["authorId"], $users);
             echo "<h3><a href=\"".$latestArticle["url"]."\">".htmlspecialchars($latestArticle["title"])."</a></h3>";
             echo "<p class=\"author\">".date("d.m.Y, H:i e", $latestArticle["timestamp_created"]);
-            echo " - ".$author["firstname"]." ".$author["lastname"]."</p>";
+            echo " - ".htmlspecialchars($author["firstname"])." ".htmlspecialchars($author["lastname"])."</p>";
             echo "<p>".replacePlaceholders(htmlspecialchars(getArticleSummary($latestArticle)))."</p>";
         ?>
         </div>
@@ -97,7 +98,7 @@
             <?php echo isset($error) ? "<p class=\"error\">".$error."</p>" : ""; ?>
             <label class="textbox">
                 <h3>Username:</h3>
-                <input type="text" required name="username" id="username" placeholder="Username" value=<?php echo isset($_POST["username"]) ? $_POST["username"] : "\"\""; ?>>
+                <input type="text" required name="username" id="username" placeholder="Username" value=<?php echo isset($_POST["username"]) ? htmlspecialchars($_POST["username"]) : "\"\""; ?>>
             </label>
             <label class="textbox">
                 <h3>Password:</h3>
@@ -106,6 +107,5 @@
             <input type="submit" name="login" value="Login" id="submit">
         </form>
     </div>
-    <script>init();</script>
 </body>
 </html>
