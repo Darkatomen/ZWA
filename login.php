@@ -45,7 +45,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <!-- TITLE AND ICON -->
