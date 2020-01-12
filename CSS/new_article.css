@@ -1,0 +1,63 @@
+/* New article */
+.error_publish {
+    border-color: red;
+    border-width: 2px;
+}
+
+.error_text {
+    color: red;
+}
+
+body div.mainPage form * {
+    margin-left: 10%;
+}
+
+body div.mainPage form label {
+    width: 0;
+}
+
+body div.mainPage form label p.paragraph {
+    width: 230px;
+}
+
+body div.mainPage form label :first-child {
+    margin-bottom: 5px;
+}
+
+body div.mainPage form label p#accepted_formats {
+    width: 260px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+body div.mainPage form textarea {
+    width: 600px;
+    max-width: 70%;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+body div.mainPage form h1 {
+    margin-bottom: 0;
+}
+
+body div.mainPage form label h2.required::before {
+    content: "*";
+    font-weight: normal;
+}
+
+body div.mainPage form label textarea#article {
+    height: 700px;
+}
+
+body div.mainPage form input#publish {
+    position: relative;
+    left: 10px;
+    margin-top: 5px;
+    margin-bottom: 200px;
+    width: 600px;
+    max-width: 70%;
+    height: 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+}

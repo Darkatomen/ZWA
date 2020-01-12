@@ -1,0 +1,12 @@
+/* CSS used for printing */
+body nav#navigation {
+    display: none;
+}
+
+body div#side {
+    display: none;
+}
+
+body div.mainPage {
+    margin-left: 10px;
+}

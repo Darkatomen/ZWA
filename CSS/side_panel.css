@@ -1,0 +1,40 @@
+/* Side panel */
+body div#side {
+    float: left;
+    position: sticky;
+    top: 48px;
+    width: 300px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    border-bottom-right-radius: 30px;
+    background-color: rgba(54, 88, 189, 0.342);
+}
+
+body div#side > * {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+body div#side h2 {
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+body div#side p.author {
+    margin-top: 0;
+}
+
+body div#side h3 {
+    font-size: 1.7em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+body div#side h3 a {
+    text-decoration: none;
+}
+
+body div#side h3 a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,21 @@
+/* Article */
+body div.mainPage h1 {
+    margin-bottom: 5px;
+}
+
+body div.mainPage p {
+    margin-top: 5px;
+    width: 90%;
+}
+
+body div.mainPage img {
+    max-width: 840px;
+    max-height: 473px;
+    margin-bottom: 20px;
+}
+
+body div.mainPage article {
+    width: 90%;
+    text-align: justify;
+    margin-bottom: 50px;
+}

@@ -1,0 +1,27 @@
+/* Global */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+}
+
+/* Head */
+body #head h1 {
+    padding-top: 10px;
+    margin-top: 0px;
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
+body #head h2 {
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-top: 5px;
+    color: slategray;
+}
+
+body #head h1 a {
+    text-decoration-line: none;
+    font-size: 1.3em;
+    color: rgb(54, 88, 189);
+}
