@@ -1,6 +1,8 @@
+Odkaz na webovou stránku
+http://wa.toad.cz/~prazaja4/SemestralniPrace/novinky.php
 Zadání
 Má se jednat o webový portál s novinkami.
-Na hlavní stránce budou zobrazeny nadpisy a krátká shrnutí všech novinek seřazených od nejaktuálnějších po nejstarší. V navigačním menu nahoře si může uživatel zvolit kategorii zpráv, kterou chce vidět a tím si je filtrovat.
+Na hlavní stránce budou zobrazeny nadpisy a krátká shrnutí všech novinek seřazených od nejaktuálnějších po nejstarší. V navigačním menu nahoře si může uživatel zvolit kategorii zpráv, kterou chce vidět, a tím si je filtrovat.
 Administrátoři stránky budou moci přidávat nové články.
 Nejaktuálnější zpráva bude vždy viditelná.
 Popis funkčnosti webu
@@ -17,11 +19,11 @@ Administrátorovi se po přihlášení zobrazí v navigačním menu možnost př
 Title
 Povinné pole Title se poté používá jako odkaz na článek a také se propisuje do titulku celé stránky, když je rozkliknutý daný článek.
 Category
-Povinné pole Category určuje kategorii článku. Podle výběru se daný článek bude zobrazovat pod jednotlivými kategoriemi článků.
+Povinné pole Category určuje kategorii článku. Podle výběru se daný článek bude zobrazovat pod jednotlivými kategoriemi článků. 
 Image
 Pole Image slouží k nahrání doprovodného obrázku ke článku. Toto pole není povinné. Obrázek se ve článku zobrazí buď mezi shrnutím (pokud není přítomno, tak mezi titulkem) a samotným článkem. Povolené formáty jsou JPEG a PNG.
 Image description
-Pole Image description slouží k popisu obrázku, je tedy stejně jako pole Image nepovinné. Pokud je vyplněno a je nahrán obrázek, slouží jako náhrada obrázku v případě, že se uživatelovi obrázek z nějakého důvodu nenačte. Také slouží jako popis obrázku pro nevidomé uživatele.
+Pole Image description slouží k popisu obrázku, je tedy stejně jako pole Image nepovinné. Pokud je vyplněno a je nahrán obrázek, slouží jako náhrada obrázku v případě, že se uživateli obrázek z nějakého důvodu nenačte. Také slouží jako popis obrázku pro nevidomé uživatele.
 Summary
 Pole Summary je určeno pro krátké (maximálně 1000 znaků dlouhé) shrnutí celého článku. Pole není povinné. Pokud je vyplněné, zobrazí se na hlavní stránce pod odkazem na článek a také pod nadpisem článku po rozkliknutí samotného článku. Pokud vyplněné není, na hlavní stránce se zobrazí část samotného článku.
 Article
@@ -35,6 +37,7 @@ Pro formátování článku slouží speciální značky:
 Párová značka <url>, ukončovaná </url-here>, případně </url-this>, slouží ke vložení odkazu. Vnitřek této značky se použije jako URL stránky, na kterou má být uživatel přesměrován po kliknutí na here, respektive this. (Příklad: <url>www.seznam.cz</url-here> se do html přepíše jako <a href=“www.seznam.cz“>here</a>).
 Publish
 Po kliknutí na tlačítko Publish se provede kontrola, zdali byla všechna pole správně vyplněna (podporuje-li jeho prohlížeč HTML atribut required, nesmazal-li ho záměrně ze stránky a nevypnul-li si JavaScript). Pokud ano, je uživatel dotázán (nemá-li vypnutý JavaScript), zdali si je jist, že chce článek zveřejnit. V kladném případě se článek nahraje na server a uživatel je přesměrován na tento článek.
+ 
 Popis implementace
 Server je napsán v PHP, stránka je v HTML s využitím kaskádních stylů CSS, skriptovacího jazyka JavaScript a technologie AJAX.
 Ze sekcí, kam uživatel nemá přístup, je automaticky přesměrováván na hlavní stránku.
