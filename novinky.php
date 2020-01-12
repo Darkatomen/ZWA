@@ -3,7 +3,8 @@
     include("_articles.php");
 
     session_start();
-
+    
+    // Get the selected category
     $category = isset($_GET["category"]) ? strtolower($_GET["category"]) : "all";
     switch ($category)
     {

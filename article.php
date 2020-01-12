@@ -6,6 +6,7 @@
 
     $latestArticle = getLatestArticle();
 
+    // Get the selected article
     if (isset($_GET["id"]))
     {
         $selectedArticle = getArticleById($_GET["id"]);

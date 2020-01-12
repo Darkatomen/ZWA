@@ -6,6 +6,7 @@
 
     $latestArticle = getLatestArticle();
     
+    // Validate login
     if (isset($_POST['login']))
     {
         $username = isset($_POST['username']) ? $_POST['username'] : false;
