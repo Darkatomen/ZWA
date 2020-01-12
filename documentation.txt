@@ -5,7 +5,7 @@ Administrátoři stránky budou moci přidávat nové články.
 Nejaktuálnější zpráva bude vždy viditelná.
 Popis funkčnosti webu
 Běžný uživatel
-Na hlavní stránce jsou vidět všechny zprávy od nejmladší po nejstarší, v navigačním menu si může uživatel vyfiltrovat kategorii, která ho zajímá. Vybraná kategorie se ukládá do adresního řádku, tudíž je možná výběr sdílet ostatním odkazem. V případě zadání neexistující kategorie je uživatel přesměrován na hlavní stránku.
+Na hlavní stránce jsou vidět všechny zprávy od nejmladší po nejstarší, v navigačním menu si může uživatel vyfiltrovat kategorii, která ho zajímá. Vybraná kategorie se ukládá do adresního řádku, tudíž je možné ji sdílet odkazem. V případě zadání neexistující kategorie je uživatel přesměrován na hlavní stránku.
  
  
 Po rozkliknutí konkrétní novinky se uživateli zobrazí daný článek. Ten začíná nadpisem, poté následuje shrnutí (pokud jej autor napsal), dále obrázek (pokud autor nějaký přidal) a poté samotný text článku.
@@ -19,7 +19,7 @@ Povinné pole Title se poté používá jako odkaz na článek a také se propis
 Category
 Povinné pole Category určuje kategorii článku. Podle výběru se daný článek bude zobrazovat pod jednotlivými kategoriemi článků.
 Image
-Pole Image slouží k nahrání doprovodného obrázku ke článku. Toto pole není povinné. Obrázek se ve článku zobrazí pod mezi shrnutím (pokud není přítomno, tak titulkem) a samotným článkem. Povolené formáty jsou JPEG a PNG.
+Pole Image slouží k nahrání doprovodného obrázku ke článku. Toto pole není povinné. Obrázek se ve článku zobrazí buď mezi shrnutím (pokud není přítomno, tak mezi titulkem) a samotným článkem. Povolené formáty jsou JPEG a PNG.
 Image description
 Pole Image description slouží k popisu obrázku, je tedy stejně jako pole Image nepovinné. Pokud je vyplněno a je nahrán obrázek, slouží jako náhrada obrázku v případě, že se uživatelovi obrázek z nějakého důvodu nenačte. Také slouží jako popis obrázku pro nevidomé uživatele.
 Summary
@@ -34,10 +34,10 @@ Pro formátování článku slouží speciální značky:
 <brt> (zkratka pro <br><br><tab>) ukončí aktuální řádek, jeden řádek vynechá a začne psát na řádek nový s odsazením od levého okraje.
 Párová značka <url>, ukončovaná </url-here>, případně </url-this>, slouží ke vložení odkazu. Vnitřek této značky se použije jako URL stránky, na kterou má být uživatel přesměrován po kliknutí na here, respektive this. (Příklad: <url>www.seznam.cz</url-here> se do html přepíše jako <a href=“www.seznam.cz“>here</a>).
 Publish
-Po kliknutí na tlačítko Publish se provede kontrola, zdali byla všechna pole správně vyplněna (podporuje-li jeho prohlížeč HTML atribut required, nesmazal-li ho záměrně ze stránky a nevypnul-li si JavaScript). Pokud ano, je uživatel dotázán (nemá-li vyplý JavaScript), zdali si je jist, že chce článek zveřejnit. V kladném případě se článek nahraje na server a uživatel je přesměrován na tento článek.
+Po kliknutí na tlačítko Publish se provede kontrola, zdali byla všechna pole správně vyplněna (podporuje-li jeho prohlížeč HTML atribut required, nesmazal-li ho záměrně ze stránky a nevypnul-li si JavaScript). Pokud ano, je uživatel dotázán (nemá-li vypnutý JavaScript), zdali si je jist, že chce článek zveřejnit. V kladném případě se článek nahraje na server a uživatel je přesměrován na tento článek.
 Popis implementace
 Server je napsán v PHP, stránka je v HTML s využitím kaskádních stylů CSS, skriptovacího jazyka JavaScript a technologie AJAX.
 Ze sekcí, kam uživatel nemá přístup, je automaticky přesměrováván na hlavní stránku.
-Validita formulářů je ověřována pomocí HTML a JavaScriptu již u klienta (krom hesla), následně vše validuje především server.
+Validita formulářů je ověřována pomocí HTML a JavaScriptu již u klienta (mimo hesla), následně vše validuje především server.
 Panel s nejaktuálnější zprávou je každých 10 vteřin automaticky aktualizován JavaScriptem pomocí technologie AJAX.
 Stránka je také zabezpečena proti možným útokům typu XSS.
