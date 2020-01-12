@@ -1,6 +1,6 @@
 <?php
 
-
+// Returnes all articles sorted by date descending
 function getArticles() :array
 {
     $articles = json_decode(file_get_contents("articles.json"), JSON_OBJECT_AS_ARRAY)["articles"];
@@ -9,6 +9,7 @@ function getArticles() :array
     return $articles;
 }
 
+// Returnes articles from the selected category sorted by date descending
 function getArticlesByCategory(string $category) :array
 {
     $articles = json_decode(file_get_contents("articles.json"), JSON_OBJECT_AS_ARRAY)["articles"];
@@ -25,11 +26,13 @@ function getArticlesByCategory(string $category) :array
     return $categorisedArticles;
 }
 
+// Returns the latest article
 function getLatestArticle() :array
 {
     return getArticles()[0];
 }
 
+// Saves the article onto the server
 function uploadNewArticle(array $article)
 {
     $articles = json_decode(file_get_contents("articles.json"), JSON_OBJECT_AS_ARRAY);
@@ -37,6 +40,7 @@ function uploadNewArticle(array $article)
     file_put_contents("articles.json", json_encode($articles));
 }
 
+// Get an article by its id
 function getArticleById(string $id) :array
 {
     $articles = getArticles();
@@ -51,6 +55,7 @@ function getArticleById(string $id) :array
     return array();
 }
 
+// Returns the summary of the article
 function getArticleSummary(array $article) :string
 {
     // If there is no summary, use a piece of the article instead
@@ -72,6 +77,7 @@ function getArticleSummary(array $article) :string
     return $summary;
 }
 
+// Replaces placeholders in the text with html tags
 function replacePlaceholders(string $text)
     {
         $text = str_replace(htmlspecialchars("<tab>"), "&emsp;", $text);

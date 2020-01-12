@@ -26,6 +26,7 @@
         )
     );
 
+    // Returns a user by their username
     function getUserByUsername($username, $users)
     {
         foreach ($users as $user)
@@ -38,6 +39,7 @@
         return NULL;
     }
 
+    // Returns a user by their userId
     function getUserById($userId, $users)
     {
         foreach ($users as $user)
