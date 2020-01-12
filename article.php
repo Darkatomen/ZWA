@@ -36,13 +36,16 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
+    <!-- TITLE AND ICON -->
+    <title><?php echo htmlspecialchars($selectedArticle["title"]); ?></title>
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <!-- CSS -->
     <link rel="stylesheet" href="CSS/head.css" media="all"/>
     <link rel="stylesheet" href="CSS/navigation_menu.css" media="all"/>
     <link rel="stylesheet" href="CSS/side_panel.css" media="all"/>
     <link rel="stylesheet" href="CSS/main_page.css" media="all"/>
     <link rel="stylesheet" href="CSS/article.css" media="all"/>
     <link rel="stylesheet" href="CSS/print.css" media="print"/>
-    <title>ZWA News</title>
 </head>
 <body>
     <!-- HEAD PANEL -->

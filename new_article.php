@@ -89,7 +89,9 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
+    <!-- TITLE AND LOGO -->
     <title>ZWA News</title>
+    <link rel="shortcut icon" href="logo.png" type="image/png">
     <!-- CSS -->
     <link rel="stylesheet" href="CSS/head.css" media="all"/>
     <link rel="stylesheet" href="CSS/navigation_menu.css" media="all"/>
